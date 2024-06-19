@@ -6,7 +6,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     private string sceneName; // Field to set the scene name in the Editor
 
-    public void LoadScene()
+    public void LoadScene(string sceneName)
     {
         if (!string.IsNullOrEmpty(sceneName))
         {

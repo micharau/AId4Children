@@ -15,13 +15,16 @@ public class DoorHandleInteractable : XRBaseInteractable
     // Scene name for loading
     public string sceneName;
 
-    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    private void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
+        // Debug log
+        Debug.Log("Door handle selected. Attempting to load scene: " + sceneName);
 
         // Invoke the event
         if (onSceneLoad != null)
         {
+            Debug.Log("onSceneLoad is not null. Invoking with scene name: " + sceneName);
             onSceneLoad.Invoke(sceneName);
         }
     }
@@ -31,6 +34,14 @@ public class DoorHandleInteractable : XRBaseInteractable
         if (onSceneLoad == null)
         {
             onSceneLoad = new LoadSceneEvent();
+        }
+
+        // Find the SceneLoader in the scene and add its LoadScene method to onSceneLoad
+        SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
+        if (sceneLoader != null)
+        {
+            onSceneLoad.AddListener(sceneLoader.LoadScene);
+            Debug.Log("SceneLoader found and method attached.");
         }
     }
 }
