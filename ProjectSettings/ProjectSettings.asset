@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: AId4Children
-  productName: "B\xFCrotest"
+  productName: SceneTransitionTest
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -140,10 +140,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 1.0
-  preloadedAssets:
-  - {fileID: 5636539285571946923, guid: 18161ec8c979fb84ca867f758a857585, type: 2}
-  - {fileID: 11400000, guid: 25e11447ece87e24081ef1d4f69ae350, type: 2}
-  - {fileID: -31352630428747664, guid: 7afcef565c7f57241b48f76db465e84f, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -164,8 +161,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.AId4Children.VRWohnungstestHands
-    Standalone: com.AId4Children.VR-Wohnungstest
+    Android: com.AId4Children.SceneTransitionTest
+    Standalone: com.AId4Children.B--rotest
   buildNumber:
     Standalone: 0
     VisionOS: 0

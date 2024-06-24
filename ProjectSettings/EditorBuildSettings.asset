@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/VR-Apartment.unity
-    guid: 71b029c85cfaea3409061c90dabb2b70
-  - enabled: 1
     path: "Assets/Scenes/B\xFCro.unity"
     guid: 74e1d13f87cf2b34a96ebb6541d38d61
+  - enabled: 1
+    path: Assets/Scenes/VR-Apartment.unity
+    guid: 71b029c85cfaea3409061c90dabb2b70
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e8e0eeecd9f831e42871d895763f36f0, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 1e90fd6cd6addb6449a3ad19725c82ab, type: 2}
