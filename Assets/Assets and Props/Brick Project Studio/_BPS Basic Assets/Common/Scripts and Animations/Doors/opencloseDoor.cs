@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR; // Namespace für VR-Interaktionen
 
 namespace SojaExiles
 
@@ -13,91 +12,59 @@ namespace SojaExiles
 		public bool open;
 		public Transform Player;
 
-        private List<InputDevice> rightHandDevices = new List<InputDevice>();
-        private bool triggerValue;
-
-        private Vector3 controllerPosition
-        {
-            get
-            {
-                if (rightHandDevices.Count > 0)
-                {
-                    Vector3 position;
-                    rightHandDevices[0].TryGetFeatureValue(CommonUsages.devicePosition, out position);
-                    return position;
-                }
-                return Vector3.zero;
-            }
-        }
-
-        private Vector3 controllerForward
-        {
-            get
-            {
-                if (rightHandDevices.Count > 0)
-                {
-                    Quaternion rotation;
-                    rightHandDevices[0].TryGetFeatureValue(CommonUsages.deviceRotation, out rotation);
-                    return rotation * Vector3.forward;
-                }
-                return Vector3.zero;
-            }
-        }
-
-        public float maxDistance = 2.0f;
-
-        void Start()
+		void Start()
 		{
 			open = false;
-            // Suche nach dem rechten Hand Controller
-            var desiredCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-            InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, rightHandDevices);
-        }
+		}
 
-        void Update()
-        {   
-            // Controllerposition und -richtung abfragen, Raycast durchführen
-            RaycastHit hit;
-            if (Physics.Raycast(controllerPosition, controllerForward, out hit, maxDistance))
-            {
-                // Überprüfen, ob das getroffene Objekt diese Tür ist
-                if (hit.collider.gameObject == this.gameObject)
-                {
-                    TryGetTriggerValue();
-                    // Triggerwert abfragen
-                    if (triggerValue) // Wenn der Trigger gedrückt wurde:
-                    {
-                        if (!open) // wenn die Tür geschlossen ist, öffne sie
-                        {
-                            StartCoroutine(opening());
-                        }
-                        else // wenn die Tür offen ist, schließe sie
-                        {
-                            StartCoroutine(closing());
-                        }
-                    }
-                }
-            }
-        }
+		/*
+		void OnMouseOver()
+		{
+			{
+				if (Player)
+				{
+					float dist = Vector3.Distance(Player.position, transform.position);
+					if (dist < 15)
+					{
+						if (open == false)
+						{
+							if (Input.GetMouseButtonDown(0))
+							{
+								StartCoroutine(opening());
+							}
+						}
+						else
+						{
+							if (open == true)
+							{
+								if (Input.GetMouseButtonDown(0))
+								{
+									StartCoroutine(closing());
+								}
+							}
 
-        bool TryGetTriggerValue()
+						}
+
+					}
+				}
+
+			}
+		}
+		*/
+
+		public void ToggleDoor()
         {
-            triggerValue = false;
-
-            // Sicherstellen ob ein Gerät gefunden wurde
-            if (rightHandDevices.Count > 0)
+            if (open == false)
             {
-                // Tastenabfrage
-                if (rightHandDevices[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerValue) && triggerValue)
-                {
-                    return true; // Trigger wurde gedrückt
-                }
+                StartCoroutine(opening());
             }
-
-            return false; // Trigger wurde nicht gedrückt
+            else
+            {
+                StartCoroutine(closing());
+            }
         }
 
-        IEnumerator opening()
+		IEnumerator opening()
 		{
 			print("you are opening the door");
 			openandclose.Play("Opening");
