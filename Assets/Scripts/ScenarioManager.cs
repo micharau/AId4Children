@@ -11,7 +11,7 @@ public class ScenarioManager : MonoBehaviour
     public List<GameObject> assets;
 
     // Path to the CSV file
-    public string relativeCsvPath = "Scenarios/Fall Leon.csv";
+    public string relativeCsvPath = "/Scenarios/Fall Leon.csv";
 
     void Start()
     {

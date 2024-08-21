@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: AId4Children
-  productName: SceneTransitionTest
+  productName: AId4Children_Build
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -161,7 +161,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.AId4Children.SceneTransitionTest
+    Android: com.AId4Children.AId4Children_Build
     Standalone: com.AId4Children.B--rotest
   buildNumber:
     Standalone: 0
@@ -463,7 +463,7 @@ PlayerSettings:
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality:
   - m_BuildTarget: Android
-    m_EncodingQuality: 1
+    m_EncodingQuality: 2
   - m_BuildTarget: iPhone
     m_EncodingQuality: 1
   - m_BuildTarget: tvOS
@@ -486,7 +486,7 @@ PlayerSettings:
     m_Encoding: 1
   m_BuildTargetDefaultTextureCompressionFormat:
   - m_BuildTarget: Android
-    m_Format: 3
+    m_Format: 1
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -859,8 +859,8 @@ PlayerSettings:
   cloudProjectId: c2ace709-bbee-4ba8-bc0f-136f9a41cb9d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Blender Test
-  organizationId: frosty_trashcan
+  projectName: AId4Children - Prototyp
+  organizationId: aid4children
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
