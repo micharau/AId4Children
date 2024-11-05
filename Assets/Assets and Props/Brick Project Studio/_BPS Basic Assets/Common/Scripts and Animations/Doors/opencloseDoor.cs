@@ -12,10 +12,24 @@ namespace SojaExiles
 		public bool open;
 		public Transform Player;
 
+		// Add this line to declare an AudioClip field.
+        public AudioClip doorSound;
+
+        // Add this line to hold a reference to the AudioSource component.
+        private AudioSource audioSource;
+
 		void Start()
 		{
 			open = false;
-		}
+
+			// Initialize the audioSource variable.
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                // Optionally add an AudioSource component if it is not attached.
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
+        }
 
 		/*
 		void OnMouseOver()
@@ -69,6 +83,13 @@ namespace SojaExiles
 			print("you are opening the door");
 			openandclose.Play("Opening");
 			open = true;
+
+			// Play the door sound if it is assigned.
+            if (doorSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(doorSound);
+            }
+
 			yield return new WaitForSeconds(.5f);
 		}
 
@@ -77,9 +98,14 @@ namespace SojaExiles
 			print("you are closing the door");
 			openandclose.Play("Closing");
 			open = false;
+
+		            // Play the door sound if it is assigned.
+            if (doorSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(doorSound);
+            }
+
 			yield return new WaitForSeconds(.5f);
 		}
-
-
 	}
 }
