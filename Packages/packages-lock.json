@@ -7,6 +7,31 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.pupil-labs.neon-xr.core": {
+      "version": "https://github.com/pupil-labs/neon-xr.git?path=/com.pupil-labs.neon-xr.core",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.addressables": "1.21.19",
+        "com.unity.inputsystem": "1.6.1",
+        "com.unity.xr.interaction.toolkit": "2.3.0"
+      },
+      "hash": "50038bb5abe59b45256fa2594a443f320a61071d"
+    },
+    "com.unity.addressables": {
+      "version": "1.21.19",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.scriptablebuildpipeline": "1.21.21",
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
       "version": "1.8.12",
       "depth": 1,
@@ -140,6 +165,13 @@
       "dependencies": {
         "com.unity.render-pipelines.core": "14.0.9"
       }
+    },
+    "com.unity.scriptablebuildpipeline": {
+      "version": "1.21.21",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
     },
     "com.unity.searcher": {
       "version": "4.9.2",
